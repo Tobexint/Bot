@@ -6,8 +6,10 @@ from selenium.webdriver.common.by import By
 from logger_setup import setup_logger
 from utils import count_search_phrases, check_contains_money, download_picture
 
+
 class AlJazeeraBot:
     def __init__(self):
+        """Initialize the AlJazeeraBot with default settings and configurations."""
         self.base_url = "https://www.aljazeera.com/"
         self.category_url = "https://www.aljazeera.com/news/"
         self.xlsx_file = "news_data.xlsx"
@@ -18,6 +20,7 @@ class AlJazeeraBot:
         self.logger = setup_logger(self.log_file)
 
     def run(self):
+        """Run the bot: open website, search news, select category, and extract data."""
         try:
             self.logger.info("Starting Al Jazeera Bot...")
             self.open_website()
@@ -30,10 +33,12 @@ class AlJazeeraBot:
             self.driver.quit()
 
     def open_website(self):
+        """Open the Al Jazeera website."""
         self.logger.info("Opening Al Jazeera website...")
         self.driver.get(self.base_url)
 
     def search_news(self):
+        """Search for news articles using the specified search phrase."""
         try:
             search_input = self.wait_for_element("//input[@type='search']")
             search_input.send_keys(self.search_phrase)
@@ -43,6 +48,7 @@ class AlJazeeraBot:
             self.logger.error(f"Error during search: {str(e)}")
 
     def select_news_category(self):
+        """Navigate to the news category page."""
         try:
             self.logger.info("Navigating to the news category page...")
             self.driver.get(self.category_url)
@@ -51,6 +57,7 @@ class AlJazeeraBot:
             self.logger.error(f"Error navigating to the news category page: {str(e)}")
 
     def extract_news_data(self):
+        """Extract data from news articles and save it to an Excel file."""
         self.logger.info("Extracting news data...")
         try:
             articles = self.wait_for_elements("//article")
@@ -74,6 +81,7 @@ class AlJazeeraBot:
             self.logger.error(f"Error extracting news data: {str(e)}")
 
     def get_element_text(self, parent_element, xpath):
+        """Get text from an element located by XPath."""
         try:
             element = parent_element.find_element(By.XPATH, xpath)
             return element.text if element else ""
@@ -82,6 +90,7 @@ class AlJazeeraBot:
             return ""
 
     def get_element_attribute(self, parent_element, xpath, attribute):
+        """Get attribute value from an element located by XPath."""
         try:
             element = parent_element.find_element(By.XPATH, xpath)
             return element.get_attribute(attribute) if element else ""
@@ -90,10 +99,12 @@ class AlJazeeraBot:
             return ""
 
     def wait_for_element(self, xpath):
+        """Wait for a single element to be visible on the page."""
         self.logger.info(f"Waiting for element with XPath {xpath}...")
         return self.wait.until(EC.visibility_of_element_located((By.XPATH, xpath)))
 
     def wait_for_elements(self, xpath):
+        """Wait for multiple elements to be visible on the page."""
         self.logger.info(f"Waiting for elements with XPath {xpath}...")
         return self.wait.until(EC.visibility_of_all_elements_located((By.XPATH, xpath)))
 
