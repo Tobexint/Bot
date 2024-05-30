@@ -1,4 +1,4 @@
-### AlJazeera News Scraper Bot
+## AlJazeera News Scraper Bot
 This Python script creates an AlJazeera bot that scrapes news data from the AlJazeera website and saves the extracted information into an Excel workbook. The bot performs a search for a specified phrase, navigates to the relevant news category, and extracts data such as titles, dates, descriptions, and image URLs from the news articles.
 
 ## Features
