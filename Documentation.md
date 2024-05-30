@@ -35,8 +35,8 @@ Run the script using the following command:
   - python main.py
 
 ## Code Overview
-# AlJazeeraBot Class
-  # __init__(self):
+## AlJazeeraBot Class
+  ## __init__(self):
   Initializes the bot with default settings and configurations:
 
   - self.base_url: Base URL for AlJazeera.
@@ -48,7 +48,7 @@ Run the script using the following command:
   - self.log_file: Log file name.
   - self.logger: Logger instance.
 
-  # run(self)
+  ## run(self)
   Main method to run the bot:
 
   - Opens the AlJazeera website.
@@ -56,28 +56,28 @@ Run the script using the following command:
   - Navigates to the news category page.
   - Extracts data from news articles and saves it to an Excel file.
 
-  # open_website(self)
+  ## open_website(self)
   - Opens the AlJazeera website.
 
-  # search_news(self)
+  ## search_news(self)
   - Searches for news articles using the specified search phrase.
 
-  # select_news_category(self)
+  ## select_news_category(self)
   - Navigates to the news category page.
 
-  # extract_news_data(self)
+  ## extract_news_data(self)
   - Extracts data from news articles and saves it to an Excel file.
 
-  # get_element_text(self, parent_element, xpath)
+  ## get_element_text(self, parent_element, xpath)
   - Gets text from an element located by XPath.
 
-  # get_element_attribute(self, parent_element, xpath, attribute)
+  ## get_element_attribute(self, parent_element, xpath, attribute)
   - Gets attribute value from an element located by XPath.
 
-  # wait_for_element(self, xpath)
+  ## wait_for_element(self, xpath)
   - Waits for a single element to be visible on the page.
 
-  # wait_for_elements(self, xpath)
+  ## wait_for_elements(self, xpath)
   - Waits for multiple elements to be visible on the page.
 
 ## Logging
