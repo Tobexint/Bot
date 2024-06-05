@@ -16,8 +16,8 @@ This Python script creates an AlJazeera bot that scrapes news data from the AlJa
 
 ## Setup
 1. Clone the repository
-    $ git clone https://github.com/yourusername/aljazeera-news-scraper.git
-    $ cd aljazeera-news-scraper
+    $ git clone https://github.com/Tobexint/Bot.git
+    $ cd Bot
 2. Install the required Python packages:
     $ pip install -r requirements.txt
 3. Download ChromeDriver and place it in a directory included in your system's PATH.
@@ -88,3 +88,6 @@ The bot includes error handling to catch and log exceptions that occur during ex
 
 ## Contributing
 Contributions are welcome. Please submit a pull request or open an issue to discuss your changes.
+
+## License
+MIT License
