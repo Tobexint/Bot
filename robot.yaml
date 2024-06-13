@@ -1,0 +1,8 @@
+tasks:
+  Run AlJazeeraBot:
+    actions:
+      - runPython: main.py
+
+condaConfigFile: conda.yaml
+
+artifactsDir: output
