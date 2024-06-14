@@ -1,7 +1,8 @@
 tasks:
   Run AlJazeeraBot:
     command: 
-      - "python main.py"
+      - runPython: main.py
+
 
 condaConfigFile: conda.yaml
 
