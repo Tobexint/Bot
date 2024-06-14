@@ -1,6 +1,6 @@
 tasks:
   Run AlJazeeraBot:
-    command: 
+    actions: 
       - runPython: main.py
 
 
