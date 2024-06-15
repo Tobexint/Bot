@@ -5,7 +5,7 @@ robot:
 condaConfigFile: conda.yaml
 
 tasks:
-  Default:
+  Run AlJazeeraBot:
     command:
       - python
       - main.py
