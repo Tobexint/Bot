@@ -14,7 +14,15 @@ class AlJazeeraBot:
         self.category_url = "https://www.aljazeera.com/news/"
         self.xlsx_file = "news_data.xlsx"
         self.search_phrase = "Netanyahu"
-        self.driver = webdriver.Chrome()
+        
+        # Setup Chrome options for headless mode
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-gpu")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        
+        self.driver = webdriver.Chrome(options=chrome_options)
         self.wait = WebDriverWait(self.driver, 10)
         self.log_file = "tbots_logs.log"
         self.logger = setup_logger(self.log_file)
